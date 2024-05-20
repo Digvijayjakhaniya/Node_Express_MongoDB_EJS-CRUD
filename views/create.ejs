@@ -1,0 +1,26 @@
+<%- include('./includes/header.ejs') %>
+
+<div class="container">
+    
+    <a href="/"><button class="btn btn-outline-danger mt-5"><i class="fas fa-arrow-left pe-2"></i>Back</button></a>
+    <h2 class="text-center alert alert-danger mt-3">Add new student</h2>
+    
+    <form action="/store" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required/>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" id="age" name="age" required/>
+        </div>
+        <div class="mb-3">
+            <label for="fees" class="form-label">Fees</label>
+            <input type="text" class="form-control" id="fees" name="fees" required/>
+        </div>
+        <button type="submit" class="btn btn-primary ">Add</button>
+    </form>
+</div>
+
+<%- include('./includes/footer.ejs') %>
+

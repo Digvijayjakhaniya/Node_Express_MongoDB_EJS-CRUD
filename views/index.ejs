@@ -1,0 +1,40 @@
+<%- include('./includes/header.ejs') %>
+
+<div class="container mb-5">
+    <a href="/create"><button class="btn btn-outline-success mt-5">Add new student</button></a>
+    <h2 class="text-center alert alert-success  mt-3">List of student</h2>
+    
+    <% if(studata.length >= 1 ){ %>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr >
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Fees</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% var i=1 %>
+            <% studata.forEach((item)=>{ %>
+                <tr>
+                    <td><%= i++ %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.age %></td>
+                    <td><%= item.fees %></td>
+                    <td>
+                        <a href="/edit/<%= item.id %>"><i class="fas fa-pen-square text-info fs-3 me-2"></i></a>
+                        <a href="/delete/<%= item.id %>"><i class="fas fa-trash text-danger fs-4 mb-sm-1"></i></a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <% }else{%>
+        <h4 class="text-center pt-5">No data found</h4>
+        <% }%>
+</div>
+
+<%- include('./includes/footer.ejs') %>
+
